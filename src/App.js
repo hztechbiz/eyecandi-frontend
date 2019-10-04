@@ -13,7 +13,7 @@ import { isUserAuthenticated } from './helpers/authUtils';
 import './assets/scss/DefaultTheme.scss';
 
 
-// Lazy loading and code splitting - 
+// Lazy loading and code splitting -
 // Derieved idea from https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52
 const loading = () => <div></div>
 
@@ -37,11 +37,11 @@ const AuthLayout = Loadable({
 });
 
 // configure fake backend
-configureFakeBackend();
+// configureFakeBackend();
 
 /**
  * Exports the component with layout wrapped to it
- * @param {} WrappedComponent 
+ * @param {} WrappedComponent
  */
 const withLayout = (WrappedComponent) => {
   const HOC = class extends Component {
@@ -61,7 +61,7 @@ const withLayout = (WrappedComponent) => {
 class App extends Component {
   /**
  * Returns the layout component based on different properties
- * @param {*} props 
+ * @param {*} props
  */
   getLayout = () => {
     return isUserAuthenticated() ? AuthLayout : NonAuthLayout;

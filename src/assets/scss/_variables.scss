@@ -10,7 +10,7 @@ $layout-width: 90%;
 // Boxed layout width
 $boxed-layout-width:  1300px;
 
-// Logo box 
+// Logo box
 $logo-box-background: transparent;
 
 // Dark menu color
@@ -34,7 +34,7 @@ $rightbar-width:           280px;
 
 //Topbar Background
 $bg-topbar-light:         #ffffff;
-$bg-topbar-dark:          #3bafda;
+$bg-topbar-dark:          $purple;
 
 // Navbar color
 $bg-navbar-dark:            #38414a;
@@ -105,7 +105,7 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $blue;
+$primary:       $purple;
 $secondary:     $gray-700;
 $success:       $green;
 $info:          $cyan;
@@ -297,7 +297,7 @@ $input-btn-padding-y-lg:      .5rem;
 $input-btn-padding-x-lg:      1rem;
 $input-btn-font-size-lg:      $font-size-lg;
 $input-btn-line-height-lg:    $line-height-lg;
- 
+
 $input-btn-border-width:      $border-width;
 
 // Buttons
@@ -425,19 +425,19 @@ $custom-file-text: (
 ) !default;
 
 
- 
+
 // Form validation
- 
+
 $form-feedback-margin-top:          $form-text-margin-top;
 $form-feedback-font-size:           $small-font-size;
 $form-feedback-valid-color:         theme-color("success");
 $form-feedback-invalid-color:       theme-color("danger");
- 
+
 $form-feedback-icon-valid-color:    $form-feedback-valid-color;
 $form-feedback-icon-valid:          str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e"), "#", "%23");
 $form-feedback-icon-invalid-color:  $form-feedback-invalid-color;
 $form-feedback-icon-invalid:        str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-feedback-icon-invalid-color}' viewBox='-2 -2 7 7'%3e%3cpath stroke='#{$form-feedback-icon-invalid-color}' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E"), "#", "%23");
- 
+
 $form-validation-states: ();
 // stylelint-disable-next-line scss/dollar-variable-default
 $form-validation-states: map-merge(
@@ -492,7 +492,7 @@ $pagination-active-border-color:    $pagination-active-bg;
 // Cards
 
 $card-spacer-x:                     $spacer;
-$card-spacer-y:                     $spacer * 2/3; 
+$card-spacer-y:                     $spacer * 2/3;
 $card-border-width:                 1px;
 $card-border-color:                 lighten($gray-300,3%);
 $card-border-radius:                .25rem;
@@ -507,12 +507,12 @@ $card-deck-margin:                  $card-group-margin;
 // Tooltips
 
 $tooltip-font-size:                 $font-size-sm;
- 
+
 $tooltip-border-radius:             0.2rem;
 $tooltip-padding-y:                 .4rem;
 $tooltip-padding-x:                 .8rem;
 $tooltip-font-size:                 $font-size-base;
- 
+
 // Form tooltips must come after regular tooltips
 $form-feedback-tooltip-padding-y:     $tooltip-padding-y;
 $form-feedback-tooltip-padding-x:     $tooltip-padding-x;
