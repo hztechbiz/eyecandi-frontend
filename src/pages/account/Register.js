@@ -31,26 +31,7 @@ class Register extends Component {
      * Handles the submit
      */
     handleValidSubmit = (event, values) => {
-        // this.props.registerUser(values.fullname, values.email, values.password);
-        let data ={
-            "udid": "testingnew",
-            "api_key": 'SimGi-8igzd-pwIV4-oYpaU-XUpW4',
-            "mac_address":'1234578',
-            "device_identity": '123456'
-        }
-        fetch("http://admin.smarttablet.local/api/v1", {
-            method: "post",
-            headers: {
-                'AppKey' : 'smart-$2y$10$RdYWP.Z6T1DFDjSSunimzOUcMDGIBmyqCQ11/Vof.idVxCY14h8ky-api',
-
-            },
-            //make sure to serialize your JSON body
-            body: data
-        })
-            .then( (response) => {
-                this.renderRedirectToConfirm();
-                //do something awesome that makes the world a better place
-            });
+        this.props.registerUser(values.fullname, values.email, values.password);
     }
 
     /**
