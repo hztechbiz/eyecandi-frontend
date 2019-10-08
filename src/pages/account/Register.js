@@ -8,7 +8,7 @@ import { AvForm, AvField, AvGroup, AvInput, AvFeedback } from 'availity-reactstr
 import { registerUser } from '../../redux/actions';
 import { isUserAuthenticated } from '../../helpers/authUtils';
 import LoaderWidget from '../../components/Loader';
-import logo from '../../assets/images/logo-dark.png';
+import logo from '../../assets/images/logo2.png';
 
 class Register extends Component {
     _isMounted = false;
@@ -48,7 +48,7 @@ class Register extends Component {
      * Redirect to confirm
      */
     renderRedirectToConfirm = () => {
-        return <Redirect to='/login' />;
+        return <Redirect to='/confirm' />;
     }
 
     render() {
@@ -68,7 +68,7 @@ class Register extends Component {
                                     <CardBody className="p-4 position-relative">
                                         <div className="text-center w-75 m-auto">
                                             <Link to="/">
-                                                <span><img src={logo} alt="" height="18" /></span>
+                                                <span><img src={logo} alt="" height="70" /></span>
                                             </Link>
                                             <p className="text-muted mb-4 mt-3">Don't have an account? Create your own account, it takes less than a minute</p>
                                         </div>

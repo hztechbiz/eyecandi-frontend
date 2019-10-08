@@ -15,19 +15,19 @@ $logo-box-background: transparent;
 
 // Dark menu color
 $menu-item-color-dark:      #6e768e;
-$menu-item-hover-color-dark:#3bafda;
-$menu-item-active-color-dark: #3bafda;
+$menu-item-hover-color-dark:  $purple;
+$menu-item-active-color-dark: $purple;
 
 //Menu item colors
 $menu-item-color:              #6e768e;
-$menu-item-hover-color:        #3bafda;
-$menu-item-active-color:       #3bafda;
-$menu-sub-item-active:   #3bafda;
+$menu-item-hover-color:        $purple;
+$menu-item-active-color:       $purple;
+$menu-sub-item-active:         $purple;
 
 $menu-item-color-light:      #9097a7;
 $menu-item-hover-color-light:#c8cddc;
 $menu-item-active-color-light: #ffffff;
-$menu-sub-item-active-color:   #3bafda;
+$menu-sub-item-active-color:  $purple;
 
 //Rightbar Width
 $rightbar-width:           280px;

@@ -7,8 +7,8 @@ import { UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem } from
 import LanguageDropdown from './LanguageDropdown';
 import NotificationDropdown from './NotificationDropdown';
 import ProfileDropdown from './ProfileDropdown';
-import logoSm from '../assets/images/logo-sm.png';
-import logo from '../assets/images/logo-light.png';
+import logoSm from '../assets/images/logo.png';
+import logo from '../assets/images/logo2.png';
 import profilePic from '../assets/images/users/avatar-1.jpg';
 
 
@@ -158,10 +158,10 @@ class Topbar extends Component {
             <div className="logo-box">
               <Link to="/" className="logo text-center">
                 <span className="logo-lg">
-                  <img src={logo} alt="" height="20" />
+                  <img src={logo} alt="" height="40" />
                 </span>
                 <span className="logo-sm">
-                  <img src={logoSm} alt="" height="24" />
+                  <img src={logoSm} alt="" height="45" />
                 </span>
               </Link>
             </div>

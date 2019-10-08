@@ -8,7 +8,7 @@ import { AvForm, AvField, AvGroup, AvInput, AvFeedback } from 'availity-reactstr
 import { loginUser } from '../../redux/actions';
 import { isUserAuthenticated } from '../../helpers/authUtils';
 import Loader from '../../components/Loader';
-import logo from '../../assets/images/logo-dark.png';
+import logo from '../../assets/images/logo2.png';
 
 class Login extends Component {
     _isMounted = false;
@@ -18,8 +18,8 @@ class Login extends Component {
 
         this.handleValidSubmit = this.handleValidSubmit.bind(this);
         this.state = {
-            username: 'test',
-            password: 'test'
+            email: '',
+            password: ''
         }
     }
 
@@ -35,7 +35,26 @@ class Login extends Component {
      * Handles the submit
      */
     handleValidSubmit = (event, values) => {
+        // console.log(values);
         this.props.loginUser(values.username, values.password, this.props.history);
+        // fetch('/api/login', {
+        //     method: 'post',
+        //     headers: {'Content-Type':'application/json'},
+        //     body: JSON.stringify({
+        //         "email": values.email,
+        //         "password": values.password
+        //
+        //     })
+        // }).then(function(response) {
+        //     return response.json();
+        // }).then(function(data) {
+        //     if(data.token) {
+        //         localStorage.setItem('token', data.token);
+        //     }else{
+        //         console.log("error",data.error);
+        //     }
+        // });
+
     }
 
 
@@ -64,7 +83,7 @@ class Login extends Component {
                                     <CardBody className="p-4 position-relative">
                                         <div className="text-center w-75 m-auto">
                                             <a href="/">
-                                                <span><img src={logo} alt="" height="18" /></span>
+                                                <span><img src={logo} alt="" height="70" /></span>
                                             </a>
                                             <p className="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                                         </div>
@@ -78,7 +97,7 @@ class Login extends Component {
                                         </Alert>}
 
                                         <AvForm onValidSubmit={this.handleValidSubmit}>
-                                            <AvField name="username" label="Username" placeholder="Enter your username" value={this.state.username} required />
+                                            <AvField name="username" label="Email" placeholder="Enter your Email" value={this.state.email} required />
 
                                             <AvGroup>
                                                 <Label for="password">Password</Label>

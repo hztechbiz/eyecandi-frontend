@@ -7,7 +7,7 @@ import { AvForm, AvField } from 'availity-reactstrap-validation';
 
 import { isUserAuthenticated } from '../../helpers/authUtils';
 import Loader from '../../components/Loader';
-import logo from '../../assets/images/logo-dark.png';
+import logo from '../../assets/images/logo2.png';
 
 class ForgetPassword extends Component {
     _isMounted = false;
@@ -43,7 +43,7 @@ class ForgetPassword extends Component {
      */
     handleValidSubmit = (event, values) => {
         console.log(values);
-        
+
         this.setState({ isLoading: true });
 
         // You can make actual api call to register here
@@ -79,11 +79,11 @@ class ForgetPassword extends Component {
                                     <CardBody className="p-4 position-relative">
                                         <div className="text-center w-75 m-auto">
                                             <a href="/">
-                                                <span><img src={logo} alt="" height="18" /></span>
+                                                <span><img src={logo} alt="" height="70" /></span>
                                             </a>
                                             <p className="text-muted mb-4 mt-3">Enter your email address and we'll send you an email with instructions to reset your password.</p>
                                         </div>
-                                    
+
                                         { /* preloader */ }
                                         {this.state.isLoading && <Loader />}
 
