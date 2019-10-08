@@ -35,26 +35,7 @@ class Login extends Component {
      * Handles the submit
      */
     handleValidSubmit = (event, values) => {
-        // console.log(values);
-        this.props.loginUser(values.username, values.password, this.props.history);
-        // fetch('/api/login', {
-        //     method: 'post',
-        //     headers: {'Content-Type':'application/json'},
-        //     body: JSON.stringify({
-        //         "email": values.email,
-        //         "password": values.password
-        //
-        //     })
-        // }).then(function(response) {
-        //     return response.json();
-        // }).then(function(data) {
-        //     if(data.token) {
-        //         localStorage.setItem('token', data.token);
-        //     }else{
-        //         console.log("error",data.error);
-        //     }
-        // });
-
+        this.props.loginUser(values.email, values.password, this.props.history);
     }
 
 
@@ -97,7 +78,7 @@ class Login extends Component {
                                         </Alert>}
 
                                         <AvForm onValidSubmit={this.handleValidSubmit}>
-                                            <AvField name="username" label="Email" placeholder="Enter your Email" value={this.state.email} required />
+                                            <AvField name="email" label="Email" placeholder="Enter your Email" value={this.state.email} required />
 
                                             <AvGroup>
                                                 <Label for="password">Password</Label>

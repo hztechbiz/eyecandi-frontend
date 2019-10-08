@@ -22,8 +22,8 @@ import {
 
 /**
  * Fetch data from given url
- * @param {*} url 
- * @param {*} options 
+ * @param {*} url
+ * @param {*} options
  */
 const fetchJSON = (url, options = {}) => {
     return fetch(url, options)
@@ -42,7 +42,7 @@ const fetchJSON = (url, options = {}) => {
 
 /**
  * Sets the session
- * @param {*} user 
+ * @param {*} user
  */
 const setSession = (user) => {
     let cookies = new Cookies();
@@ -53,24 +53,24 @@ const setSession = (user) => {
 };
 /**
  * Login the user
- * @param {*} payload - username and password 
+ * @param {*} payload - username and password
  */
-function* login({ payload: { username, password } }) {
+function* login({ payload: { email, password } }) {
     const options = {
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email:email, password:password }),
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     };
 
     try {
-        const response = yield call(fetchJSON, '/users/authenticate', options);
+        const response = yield call(fetchJSON, '/api/login', options);
         setSession(response);
         yield put(loginUserSuccess(response));
     } catch (error) {
         let message;
         switch (error.status) {
-            case 500: message = 'Internal Server Error'; break;
-            case 401: message = 'Invalid credentials'; break;
+            case 400: message = 'Invalid credentials'; break;
+            // case 401: message = 'Invalid credentials'; break;
             default: message = error;
         }
         yield put(loginUserFailed(message));
@@ -81,7 +81,7 @@ function* login({ payload: { username, password } }) {
 
 /**
  * Logout the user
- * @param {*} param0 
+ * @param {*} param0
  */
 function* logout({ payload: { history } }) {
     try {
@@ -97,13 +97,13 @@ function* logout({ payload: { history } }) {
  */
 function* register({ payload: { fullname, email, password } }) {
     const options = {
-        body: JSON.stringify({ fullname, email, password }),
+        body: JSON.stringify({ name:fullname, email:email, password:password }),
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     };
 
     try {
-        const response = yield call(fetchJSON, '/users/register', options);
+        const response = yield call(fetchJSON, '/api/register', options);
         yield put(registerUserSuccess(response));
     } catch (error) {
         let message;

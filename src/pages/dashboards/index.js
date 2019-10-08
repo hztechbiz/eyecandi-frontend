@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, Card, CardBody } from 'reactstrap';
 
-import { getLoggedInUser } from '../../helpers/authUtils';
+// import { getLoggedInUser } from '../../helpers/authUtils';
 import Loader from '../../components/Loader';
 
 
@@ -10,9 +10,9 @@ class DefaultDashboard extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            user: getLoggedInUser()
-        };
+        // this.state = {
+        //     // user: getLoggedInUser()
+        // };
     }
 
     render() {
@@ -28,10 +28,10 @@ class DefaultDashboard extends Component {
                             <div className="page-title-box">
                                 <Row>
                                     <Col lg={7}>
-                                        <h4 className="page-title">Welcome, {this.state.user.firstName}</h4>
+                                        <h4 className="page-title">Welcome, test</h4>
                                     </Col>
                                     <Col lg={5} className="mt-lg-3 mt-md-0">
-                                        
+
                                     </Col>
                                 </Row>
                             </div>
