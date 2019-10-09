@@ -90,7 +90,7 @@ class Login extends Component {
                                                 <Button color="primary" className="btn-block">Submit</Button>
                                             </FormGroup>
 
-                                            <p><strong>Username:</strong> test &nbsp;&nbsp; <strong>Password:</strong> test</p>
+                                            {/*<p><strong>Username:</strong> test &nbsp;&nbsp; <strong>Password:</strong> test</p>*/}
                                         </AvForm>
                                     </CardBody>
                                 </Card>
