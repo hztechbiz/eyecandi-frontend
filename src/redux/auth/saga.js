@@ -61,22 +61,27 @@ function* login({ payload: { email, password } }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     };
-
     try {
         const response = yield call(fetchJSON, '/api/login', options);
-        setSession(response);
-        yield put(loginUserSuccess(response));
-    } catch (error) {
+
         let message;
-        switch (error.status) {
-            case 400: message = 'Invalid credentials'; break;
-            // case 401: message = 'Invalid credentials'; break;
-            default: message = error;
+        if(response.error)
+        {
+            message = response.error;
+            yield put(loginUserFailed(message));
+            setSession(null);
+        }else{
+            setSession(response);
+            yield put(loginUserSuccess(response));
         }
+    } catch (error) {
+        // message;
+        let message = error;
         yield put(loginUserFailed(message));
         setSession(null);
     }
-}
+    };
+
 
 
 /**
